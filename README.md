@@ -13,7 +13,7 @@ Dynamic workflows are spectacular — and expensive by design: every agent carri
 1. **The AI doesn't feel the spend.** Launching one agent or sixteen is the same gesture. Nothing resists. During our test campaign, a mundane market-study prompt — no "ultracode" anywhere — spawned 3 agents and burned **~1.12M tokens** with zero cost arbitrage.
 2. **Ultracode turns off the native guardrails.** Per [Anthropic's own documentation](https://code.claude.com/docs/en/workflows), while ultracode is on, **three** checks go quiet: the "Large workflow" warning (>25 agents or >1.5M projected tokens), the first-launch approval in auto permission mode, and the session's concurrent subagent limit for Agent-tool subagents. The most expensive mode is exactly the one where nothing alerts you anymore.
 
-UltraCode Cockpit fills that gap with a discipline, not a lecture. v1.0.1 was hardened by a live test campaign (trigger, obedience, pressure resistance, kill-switch, patch mode, real Claude Code session) — the fixes it forced are in the skill.
+UltraCode Cockpit fills that gap with a discipline, not a lecture. v1.0.1 was hardened by a live test campaign (trigger, obedience, pressure resistance, kill-switch, patch mode, real Claude Code session) — the fixes it forced are in the skill. v1.1 taught it to *propose* the mode itself when a task truly deserves it (never for small tasks). v1.2 taught it to install its own lookout line, with your consent.
 
 ## What it does
 
@@ -51,9 +51,14 @@ Skill triggering is probabilistic: the model reads the skill's description and d
 
 1. **Say the word (zero setup).** Mention ultracode, workflows, subagents or your token spend — the cockpit is designed to light up. This is the core promise, and what the skill's description targets.
 2. **Call it by name (zero setup, always works).** "Use ultracode-cockpit" / « applique ultracode-cockpit ». One sentence, guaranteed boarding.
-3. **The anchor line (recommended for heavy users).** One line in your personal instructions or memory: *"Before any subagent or workflow, load ultracode-cockpit."* The skill itself offers to set this anchor the first time it loads. This is what makes the cockpit catch the heavy tasks that never say "ultracode" — like the 1.12M-token study above.
+3. **The lookout line (recommended for heavy users — since v1.2, the skill installs it for you).** One line in a layer Claude re-reads every session. On load, the skill checks whether it's in place and, if it's missing, offers to set it up — one GO and it's done:
+   - **Claude Code**: with your GO, the skill adds this line to your global `~/.claude/CLAUDE.md` itself (created if missing, never overwritten):
+     > *Before launching any subagent (Agent tool) or workflow, load the ultracode-cockpit skill and apply its triage — estimate per tier, T1 stays silent.*
+   - **claude.ai / app**: skills can't edit account settings, so it hands you that same line, ready to paste into your personal instructions (Settings → Profile), plus a memory note as backup.
 
-We say it plainly because we measured it: in environments that list skills by name only, no description can fire — that's a platform behavior, not a knob this skill can turn. The anchor line is the fix until it changes.
+   This is what makes the cockpit catch the heavy tasks that never say "ultracode" — like the 1.12M-token study above. Field note: that exact CLAUDE.md line fired on first try (fresh session, zero trigger words in the prompt → estimate displayed before any agent launched).
+
+We say it plainly because we measured it: in environments that list skills by name only, no description can fire — that's a platform behavior, not a knob this skill can turn. The lookout line is the fix until it changes.
 
 ## Languages
 
