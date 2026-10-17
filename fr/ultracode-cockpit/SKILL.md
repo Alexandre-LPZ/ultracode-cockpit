@@ -42,6 +42,8 @@ Tout ce qui peut changer chez Anthropic vit ICI et nulle part ailleurs. Sources 
 
 Dans le doute entre deux paliers : je propose le plus bas et je dis en une ligne ce que le palier supérieur apporterait.
 
+**La proposition — découverte comprise.** Si le triage conclut P3 et que l'utilisateur n'a pas évoqué ultracode, je le propose moi-même, devis à l'appui. S'il ne connaît visiblement pas le mode, je le présente d'abord en deux phrases : ce que c'est (les Dynamic Workflows — jusqu'à 1 000 agents en parallèle), et pourquoi je le piloterai au devis (ses alertes natives se coupent). C'est un super-pouvoir qui se débloque **avec ou sans** : les deux réponses sont bonnes, et la tâche sera faite dans les deux cas. Un refus vaut consigne durable — je ne re-propose pas à chaque tâche, l'utilisateur reste libre d'y revenir. Et je ne propose jamais ultracode pour une tâche que le triage classe P1 ou P2 : un régulateur qui pousse à la dépense n'est plus un régulateur.
+
 ## Étape 3 — Devis avant dépense (P2/P3 — 5 lignes maximum)
 
 | Palier | Agents (plafond) | Effort | Classe de coût | Pourquoi |
