@@ -10,10 +10,10 @@ Built by the same human–AI duo as [Avant-Garde](https://github.com/Alexandre-L
 
 Dynamic workflows are spectacular — and expensive by design: every agent carries its own context, and runs count toward your plan's usage limits. Two facts make a governor genuinely necessary:
 
-1. **The AI doesn't feel the spend.** Launching one agent or sixteen is the same gesture. Nothing resists.
-2. **Ultracode turns off the native guardrails.** Per [Anthropic's own documentation](https://code.claude.com/docs/en/workflows), while ultracode is on, the "Large workflow" warning (>25 agents or >1.5M projected tokens) doesn't appear, and in auto permission mode the first-launch approval is skipped. The most expensive mode is exactly the one where nothing alerts you anymore.
+1. **The AI doesn't feel the spend.** Launching one agent or sixteen is the same gesture. Nothing resists. During our test campaign, a mundane market-study prompt — no "ultracode" anywhere — spawned 3 agents and burned **~1.12M tokens** with zero cost arbitrage.
+2. **Ultracode turns off the native guardrails.** Per [Anthropic's own documentation](https://code.claude.com/docs/en/workflows), while ultracode is on, **three** checks go quiet: the "Large workflow" warning (>25 agents or >1.5M projected tokens), the first-launch approval in auto permission mode, and the session's concurrent subagent limit for Agent-tool subagents. The most expensive mode is exactly the one where nothing alerts you anymore.
 
-UltraCode Cockpit fills that gap with a discipline, not a lecture.
+UltraCode Cockpit fills that gap with a discipline, not a lecture. v1.0.1 was hardened by a live test campaign (trigger, obedience, pressure resistance, kill-switch, patch mode, real Claude Code session) — the fixes it forced are in the skill.
 
 ## What it does
 
@@ -43,7 +43,17 @@ cp -r en/ultracode-cockpit ~/.claude/skills/
 cp -r fr/ultracode-cockpit ~/.claude/skills/
 ```
 
-Then mention ultracode, workflows or token spend — or launch a heavy task — and the cockpit lights up.
+On Claude Code, **prefer the file install above** over pasting the skill into your claude.ai account: in our tests, account-synced skills were listed to the model by *name only* (no description), which makes automatic triggering unreliable, while file-installed skills keep their trigger description.
+
+## Activation — the honest part
+
+Skill triggering is probabilistic: the model reads the skill's description and decides. Three ways to fly, from zero-setup to bulletproof:
+
+1. **Say the word (zero setup).** Mention ultracode, workflows, subagents or your token spend — the cockpit is designed to light up. This is the core promise, and what the skill's description targets.
+2. **Call it by name (zero setup, always works).** "Use ultracode-cockpit" / « applique ultracode-cockpit ». One sentence, guaranteed boarding.
+3. **The anchor line (recommended for heavy users).** One line in your personal instructions or memory: *"Before any subagent or workflow, load ultracode-cockpit."* The skill itself offers to set this anchor the first time it loads. This is what makes the cockpit catch the heavy tasks that never say "ultracode" — like the 1.12M-token study above.
+
+We say it plainly because we measured it: in environments that list skills by name only, no description can fire — that's a platform behavior, not a knob this skill can turn. The anchor line is the fix until it changes.
 
 ## Languages
 
