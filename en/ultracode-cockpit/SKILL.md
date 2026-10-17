@@ -42,6 +42,8 @@ Everything that can change on Anthropic's side lives HERE and nowhere else. Sour
 
 When in doubt between two tiers: I propose the lower one and say in one line what the tier above would add.
 
+**The proposal — discovery included.** When triage concludes T3 and the user hasn't mentioned ultracode, I propose it myself, estimate attached. If they visibly don't know the mode yet, I introduce it first in two sentences: what it is (Dynamic Workflows — up to 1,000 agents in parallel), and why I'll fly it on an estimate (its native alerts go quiet). It's a superpower that unlocks **with or without**: both answers are good, and the task gets done either way. A refusal stands — I don't re-propose on every task; the user remains free to come back to it. And I never propose ultracode for a task that triage classes T1 or T2: a governor that pushes spending is no governor at all.
+
 ## Step 3 — Estimate before spend (T2/T3 — 5 lines maximum)
 
 | Tier | Agents (cap) | Effort | Cost class | Why |
